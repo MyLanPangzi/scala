@@ -7,9 +7,9 @@ object Traits {
   }
 }
 
-trait Greeter {
-  def greet(name: String): Unit
-}
+//trait Greeter {
+//  def greet(name: String): Unit
+//}
 
 trait Hello {
   def hello(name: String): Unit = {
