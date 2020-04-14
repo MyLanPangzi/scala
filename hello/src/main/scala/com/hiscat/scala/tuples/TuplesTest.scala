@@ -6,7 +6,7 @@ object TuplesTest {
     println(tuple)
     println(tuple._1)
     println(tuple._2)
-    val t: Tuple2[String, Int] = tuple
+    val t: (String, Int) = tuple
     println(t)
     val (name, quantity) = tuple
     println(name)
