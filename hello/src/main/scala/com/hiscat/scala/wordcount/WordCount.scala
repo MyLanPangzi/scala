@@ -19,5 +19,21 @@ object WordCount {
       .take(3)
       .foreach(println)
     source.close()
+    List(("Hello Scala", 4), ("Hello Spark", 2))
+      .map(_._2)
+      .sortWith((gt, lt) => gt > lt)
+      .take(3)
+      .foreach(println)
+    List(("Hello Scala", 4), ("Hello Spark", 2))
+      //      .map(_._2)
+      .sortBy {
+        case (str, i) => i
+      }
+      .reverse
+      .map {
+        case (str, i) => i
+      }
+      .take(3)
+      .foreach(println)
   }
 }
