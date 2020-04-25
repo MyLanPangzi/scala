@@ -47,7 +47,7 @@ object Jdbc {
     df.write
       .mode(SaveMode.Overwrite)
       .option("createTableOptions", "char set utf8")
-      .jdbc("jdbc:mysql://hadoop102:3306/gmall", "user_id_name", props)
+      .jdbc("jdbc:mysql://hadoop102:3306/gmall?useUnicode=true&characterEncoding=utf8", "user_id_name", props)
 
     users
       .map(row => (row.getLong(0), row.getString(4)))
@@ -56,7 +56,7 @@ object Jdbc {
       .mode(SaveMode.Overwrite)
       .option("createTableOptions", "char set utf8")
       .option("createTableColumnTypes", "bigid bigint, name VARCHAR(1024)")
-      .jdbc("jdbc:mysql://hadoop102:3306/gmall", "user_id_name_2", props)
+      .jdbc("jdbc:mysql://hadoop102:3306/gmall?useUnicode=true&characterEncoding=utf8", "user_id_name_2", props)
 
     spark.stop()
   }
