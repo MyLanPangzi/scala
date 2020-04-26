@@ -45,7 +45,7 @@ object WordCountWatermarkWindowed {
       .orderBy("window")
 
       //sink
-      .writeStream.outputMode(OutputMode.Append())
+      .writeStream.outputMode(OutputMode.Complete())
       .option("truncate", "false")
       .format("console")
       .start()
