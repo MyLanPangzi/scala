@@ -1,4 +1,2 @@
 Hello Scala
 Hello Spark
-Hello World
-Hello Hadoop
