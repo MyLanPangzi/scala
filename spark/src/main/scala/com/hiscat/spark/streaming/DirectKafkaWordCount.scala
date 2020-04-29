@@ -37,6 +37,8 @@ object DirectKafkaWordCount {
       })
     //      .print()
 
+//    KafkaUtils.createDirectStream(ssc,LocationStrategies.PreferBrokers)
+
     // Start the computation
     ssc.start()
     ssc.awaitTermination()
