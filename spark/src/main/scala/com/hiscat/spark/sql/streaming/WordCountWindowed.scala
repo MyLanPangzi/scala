@@ -19,7 +19,7 @@ object WordCountWindowed {
     //source
     spark.readStream
       .format("socket")
-      .option("host", "hadoop102")
+      .option("host", "localhost")
       .option("port", "9999")
       .option("includeTimestamp", value = true)
       .load()

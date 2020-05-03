@@ -18,6 +18,7 @@ object WordCount {
       //grouping
       .reduceByKey(_ + _)
       //sink
+
       .print()
 
     sc.start()
