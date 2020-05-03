@@ -47,6 +47,7 @@ class PageFlowAnalysisService extends TService {
           .filter(condition.contains)
           .map((_, 1))
       })
+
       .map(_._2)
       .flatMap(e => e)
       .reduceByKey(_ + _)

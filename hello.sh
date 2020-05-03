@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
 kafka-topics.sh --delete --zookeeper localhost:2181 --topic first
-kafka-topics.sh --delete --zookeeper localhost:2181 --topic test
-kafka-topics.sh --delete --zookeeper localhost:2181 --topic topic_event
-kafka-topics.sh --delete --zookeeper localhost:2181 --topic topic_start
-kafka-topics.sh --list --bootstrap-server localhost:9092
+
+kafka-topics.sh --list --bootstrap-servers localhost:9092
+kafka-topics.sh --list --zookeeper localhost:2181
 kafka-topics.sh --zookeeper hadoop102:2181 --list
 kafka-topics.sh --zookeeper hadoop102:2181 --describe --topic topic_start
 kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic hello

@@ -22,5 +22,6 @@
             <artifactId>spark-core_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
+
     </dependencies>
 </project>

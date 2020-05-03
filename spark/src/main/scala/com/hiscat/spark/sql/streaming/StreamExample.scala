@@ -1,7 +1,6 @@
-package com.hiscat.spark.structured.streaming
+package com.hiscat.spark.sql.streaming
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.streaming.OutputMode
 import org.apache.spark.sql.types.StructType
 
 object StreamExample {

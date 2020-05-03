@@ -6,12 +6,12 @@ import org.apache.spark.streaming._
 
 import scala.collection.mutable
 
-object Transformations {
+object UpdateStateByKey {
 
 
   def main(args: Array[String]): Unit = {
     val sc = new StreamingContext(
-      new SparkConf().setAppName("Transformations").setMaster("local[*]"),
+      new SparkConf().setAppName("UpdateStateByKey").setMaster("local[*]"),
       Seconds(3)
     )
 
