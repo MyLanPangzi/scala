@@ -1,10 +1,9 @@
 package com.hiscat
 
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.api.windowing.time.Time
 
 
-object WordCOunt {
+object WordCount {
   def main(args: Array[String]): Unit = {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     env.fromCollection(List("hello world"))
