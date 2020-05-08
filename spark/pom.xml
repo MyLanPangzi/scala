@@ -11,7 +11,7 @@
         <janino.version>3.0.8</janino.version>
         <lzo-hadoop.version>1.0.6</lzo-hadoop.version>
         <scala.binary.version>2.11</scala.binary.version>
-        <hive-exec.version>1.2.2</hive-exec.version>
+        <hive-exec.version>2.3.4</hive-exec.version>
         <wagon-maven-plugin>2.0.0</wagon-maven-plugin>
         <wagon-ssh.version>3.3.4</wagon-ssh.version>
         <spark.version>2.4.5</spark.version>
