@@ -49,6 +49,9 @@ under the License.
         <scala.binary.version>2.11</scala.binary.version>
         <scala.version>2.11.12</scala.version>
         <flink-connector-redis_2.11.version>1.0</flink-connector-redis_2.11.version>
+        <fastjson.version>1.2.70</fastjson.version>
+        <flink-connector-jdbc_2.11.version>1.12-SNAPSHOT</flink-connector-jdbc_2.11.version>
+        <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
     </properties>
 
     <dependencies>
@@ -84,7 +87,36 @@ under the License.
             <artifactId>flink-connector-redis_2.11</artifactId>
             <version>${flink-connector-redis_2.11.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-elasticsearch6 -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-elasticsearch6_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-jdbc_2.11</artifactId>
+            <version>${flink-connector-jdbc_2.11.version}</version>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-cep-scala_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
         <!-- These dependencies are excluded from the application JAR by default. -->

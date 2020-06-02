@@ -1,4 +1,4 @@
-package com.hiscat
+package com.hiscat.flink.sink
 
 import java.lang
 import java.util.Properties

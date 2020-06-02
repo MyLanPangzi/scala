@@ -1,5 +1,8 @@
 package com.hiscat.flink.sensor
 
-case class SensorReading(id: String,
-                         timestamp: Long,
-                         temperature: Double)
+import scala.beans.BeanProperty
+
+case class SensorReading(
+                          @BeanProperty id: String,
+                          @BeanProperty timestamp: Long,
+                          @BeanProperty temperature: Double)

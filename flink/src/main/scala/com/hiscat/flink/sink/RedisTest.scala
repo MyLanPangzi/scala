@@ -1,4 +1,4 @@
-package com.hiscat
+package com.hiscat.flink.sink
 
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.connectors.redis.RedisSink
