@@ -1,9 +1,9 @@
-package com.hiscat.flink.connected
+package com.hiscat.flink.transformation
 
 import org.apache.flink.api.common.state.{ValueState, ValueStateDescriptor}
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.functions.co.RichCoFlatMapFunction
-import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}
+import org.apache.flink.streaming.api.scala._
 import org.apache.flink.util.Collector
 
 object ConnectedStream {
@@ -32,7 +32,7 @@ object ConnectedStream {
     }
 
     override def flatMap2(value: String, out: Collector[String]): Unit = {
-      if (blocked.value() == null) {
+      if (!blocked.value()) {
         out.collect(value)
       }
     }

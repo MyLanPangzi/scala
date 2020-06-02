@@ -33,7 +33,7 @@ object TtlValueStateTest {
     override def open(parameters: Configuration): Unit = {
       val ttlConfig = StateTtlConfig
         .newBuilder(Time.seconds(1))
-        .disableCleanupInBackground()
+//        .disableCleanupInBackground()
         .updateTtlOnCreateAndWrite()
         .neverReturnExpired()
 //        .cleanupFullSnapshot()

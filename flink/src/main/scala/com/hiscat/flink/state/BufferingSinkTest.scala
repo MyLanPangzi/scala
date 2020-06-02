@@ -11,9 +11,7 @@ import scala.collection.mutable.ListBuffer
 
 object BufferingSinkTest {
 
-  class BufferingSink(threshold: Int = 0)
-    extends SinkFunction[(String, Int)]
-      with CheckpointedFunction {
+  class BufferingSink(threshold: Int = 0) extends SinkFunction[(String, Int)] with CheckpointedFunction {
 
     @transient
     private var checkpointedState: ListState[(String, Int)] = _
