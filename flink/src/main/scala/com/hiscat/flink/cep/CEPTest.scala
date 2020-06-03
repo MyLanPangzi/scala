@@ -11,7 +11,9 @@ import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.util.Collector
 
 object CEPTest {
-    case class Event(username:String,eventType:String,ip:String)
+
+  case class Event(username: String, eventType: String, ip: String)
+
   def main(args: Array[String]): Unit = {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     env.setParallelism(1)
@@ -32,17 +34,18 @@ object CEPTest {
 
     val loginStream = CEP.pattern(stream, pattern)
 
-    loginStream.process(new PatternProcessFunction[Event, (String,String,String)] {
+    loginStream
+      .process(new PatternProcessFunction[Event, (String, String, String)] {
       override def processMatch(`match`: util.Map[String, util.List[Event]],
                                 ctx: PatternProcessFunction.Context,
-                                out: Collector[(String,String,String)]): Unit = {
+                                out: Collector[(String, String, String)]): Unit = {
         val ip1 = `match`.getOrDefault("begin", Collections.emptyList()).get(0).ip
         val ip2 = `match`.getOrDefault("fail1", Collections.emptyList()).get(0).ip
         val ip3 = `match`.getOrDefault("fail2", Collections.emptyList()).get(0).ip
-        out.collect((ip1,ip2,ip3))
+        out.collect((ip1, ip2, ip3))
       }
     })
-        .print()
+      .print()
 
     env.execute()
   }

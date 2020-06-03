@@ -36,7 +36,7 @@ object SensorTest {
         seq.map(t => (t._1, t._2 + (random.nextGaussian() * .5)))
           .foreach(e => ctx.collect(SensorReading(e._1, millis, e._2)))
 
-        Thread.sleep(100)
+        Thread.sleep(300)
       }
     }
 
