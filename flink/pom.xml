@@ -52,6 +52,7 @@ under the License.
         <fastjson.version>1.2.70</fastjson.version>
         <flink-connector-jdbc_2.11.version>1.12-SNAPSHOT</flink-connector-jdbc_2.11.version>
         <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
+        <kafka_2.11.version>2.5.0</kafka_2.11.version>
     </properties>
 
     <dependencies>
@@ -76,11 +77,16 @@ under the License.
             <artifactId>flink-connector-kafka_2.11</artifactId>
             <version>${flink.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka-0.10_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.flink</groupId>-->
+<!--            <artifactId>flink-connector-kafka-0.10_${scala.binary.version}</artifactId>-->
+<!--            <version>${flink.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.flink</groupId>-->
+<!--            <artifactId>flink-connector-kafka-0.11_${scala.binary.version}</artifactId>-->
+<!--            <version>${flink.version}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.bahir</groupId>
@@ -145,6 +151,12 @@ under the License.
             <artifactId>flink-csv</artifactId>
             <version>${flink.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.kafka</groupId>-->
+<!--            <artifactId>kafka_2.11</artifactId>-->
+<!--            <version>${kafka_2.11.version}</version>-->
+<!--        </dependency>-->
+
 
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
