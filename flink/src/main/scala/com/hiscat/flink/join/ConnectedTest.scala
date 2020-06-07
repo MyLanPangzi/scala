@@ -44,7 +44,9 @@ object ConnectedTest {
         val delay = 5000L
 
         override def processElement1(value: Order, ctx: KeyedCoProcessFunction[String, Order, Pay, String]#Context, out: Collector[String]): Unit = {
+
           if (pay.value() != null) {
+            ctx.timerService().deleteEventTimeTimer(pay.value().ts + delay)
             pay.clear()
             out.collect(s"order connected:${value.id}")
           } else {
@@ -55,6 +57,7 @@ object ConnectedTest {
 
         override def processElement2(value: Pay, ctx: KeyedCoProcessFunction[String, Order, Pay, String]#Context, out: Collector[String]): Unit = {
           if (order.value() != null) {
+            ctx.timerService().deleteEventTimeTimer(order.value().ts + delay)
             order.clear()
             out.collect(s"order connected:${value.orderId}")
           } else {
@@ -65,10 +68,10 @@ object ConnectedTest {
 
         override def onTimer(timestamp: Long, ctx: KeyedCoProcessFunction[String, Order, Pay, String]#OnTimerContext, out: Collector[String]): Unit = {
           if (order.value() == null) {
-            ctx.output(orderFailed, s"order failed connect:${ctx.getCurrentKey}")
+            ctx.output(orderFailed, s"order connected failed connect:${ctx.getCurrentKey}")
           }
           if (pay.value() == null) {
-            ctx.output(payFailed, s"order failed connect:${ctx.getCurrentKey}")
+            ctx.output(payFailed, s"pay connected failed connect:${ctx.getCurrentKey}")
           }
 
           order.clear()
