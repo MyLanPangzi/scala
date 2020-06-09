@@ -35,7 +35,8 @@ object CEPTest3 {
 
     val tag = OutputTag[String]("not pay")
     val stream = CEP.pattern(input, pattern)
-      .flatSelect(tag,
+      .flatSelect(
+        tag,
         new PatternFlatTimeoutFunction[OrderEvent, String] {
           override def timeout(pattern: util.Map[String, util.List[OrderEvent]], timeoutTimestamp: Long, out: Collector[String]): Unit = {
             out.collect(s"not pay order:${pattern("create").head.id}")
