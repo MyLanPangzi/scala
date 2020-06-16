@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>warehouse</artifactId>
+
+    <properties>
+        <wagon-maven-plugin>2.0.0</wagon-maven-plugin>
+        <wagon-ssh.version>3.3.4</wagon-ssh.version>
+    </properties>
     <dependencies>
         <!-- 引入Spark相关的Jar包 -->
         <dependency>
@@ -41,5 +46,31 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>${wagon-ssh.version}</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>upload-single</goal>
+                        </goals>
+                        <configuration>
+                            <fromFile>target/${project.build.finalName}.${project.packaging}</fromFile>
+                            <url>scp://root:Xiebo0409@hadoop102:/opt/module/spark-local/examples/jars/</url>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
