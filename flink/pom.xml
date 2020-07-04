@@ -144,20 +144,16 @@ under the License.
             <artifactId>flink-table-planner_2.11</artifactId>
             <version>${flink.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-formats -->
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-csv -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-csv</artifactId>
             <version>${flink.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.kafka</groupId>-->
-<!--            <artifactId>kafka_2.11</artifactId>-->
-<!--            <version>${kafka_2.11.version}</version>-->
-<!--        </dependency>-->
-
-
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-json</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
         <!-- These dependencies are excluded from the application JAR by default. -->
