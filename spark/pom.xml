@@ -16,7 +16,7 @@
         <wagon-ssh.version>3.3.4</wagon-ssh.version>
         <spark.version>2.4.5</spark.version>
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
-        <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.anarres.lzo/lzo-hadoop -->
